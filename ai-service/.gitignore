@@ -1,0 +1,5 @@
+__pycache__
+debug_frames
+processed_videos
+yolov8n.pt
+yolov8s.pt

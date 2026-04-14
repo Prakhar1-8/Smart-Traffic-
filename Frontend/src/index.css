@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 12% 6%;
+    --background-secondary: 240 20% 4%;
+    --background-tertiary: 240 12% 9%;
+    --foreground: 0 0% 100%;
+
+    --card: 240 12% 9%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 240 12% 9%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 153 100% 50%;
+    --primary-foreground: 240 12% 6%;
+
+    --secondary: 240 12% 9%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 240 20% 15%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 5 100% 64%;
+    --destructive-foreground: 0 0% 100%;
+
+    --warning: 43 96% 56%;
+    --warning-foreground: 240 12% 6%;
+
+    --border: 240 20% 14%;
+    --input: 240 20% 14%;
+    --ring: 153 100% 50%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 240 20% 4%;
+    --sidebar-foreground: 0 0% 60%;
+    --sidebar-primary: 153 100% 50%;
+    --sidebar-primary-foreground: 240 12% 6%;
+    --sidebar-accent: 240 20% 14%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 240 20% 14%;
+    --sidebar-ring: 153 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background-secondary));
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 3px;
+  }
+}
+
+@layer utilities {
+  .glow-green {
+    box-shadow: 0 0 20px hsl(153 100% 50% / 0.15);
+  }
+  .glow-red {
+    box-shadow: 0 0 20px hsl(5 100% 64% / 0.15);
+  }
+  .glow-yellow {
+    box-shadow: 0 0 20px hsl(43 96% 56% / 0.15);
+  }
+  .glow-blue {
+    box-shadow: 0 0 20px hsl(217 91% 60% / 0.15);
+  }
+}
