@@ -101,6 +101,7 @@ def analyze_video(payload: dict):
 
         count_frame = 0
         boxes = []
+        current_frame_counts = defaultdict(int)
 
         for r in results:
             if r.boxes is None:
@@ -114,6 +115,7 @@ def analyze_video(payload: dict):
                     label = VEHICLE_CLASSES[cls]
                     count_frame += 1
                     vehicle_counts[label] += 1
+                    current_frame_counts[label] += 1
 
                     x1, y1, x2, y2 = box.xyxy[0].tolist()
                     boxes.append((x1, y1, x2, y2, label, conf))
@@ -149,7 +151,7 @@ def analyze_video(payload: dict):
             )
 
         # -------- COUNT OVERLAY --------
-        overlay_text = f"C:{vehicle_counts['car']} B:{vehicle_counts['bike']} Bus:{vehicle_counts['bus']} T:{vehicle_counts['truck']}"
+        overlay_text = f"C:{current_frame_counts['car']} B:{current_frame_counts['bike']} Bus:{current_frame_counts['bus']} T:{current_frame_counts['truck']}"
         cv2.putText(frame, overlay_text, (20, 40), cv2.FONT_HERSHEY_SIMPLEX, 1, (255,255,255), 2)
 
         out.write(frame)
@@ -205,10 +207,10 @@ def analyze_video(payload: dict):
         "totalVehicles": int(avg),
         "density": density,
         "vehicleTypes": {
-            "car": vehicle_counts["car"],
-            "bike": vehicle_counts["bike"],
-            "bus": vehicle_counts["bus"],
-            "truck": vehicle_counts["truck"],
+            "car": int(vehicle_counts["car"] / frames) if frames > 0 else 0,
+            "bike": int(vehicle_counts["bike"] / frames) if frames > 0 else 0,
+            "bus": int(vehicle_counts["bus"] / frames) if frames > 0 else 0,
+            "truck": int(vehicle_counts["truck"] / frames) if frames > 0 else 0,
         },
         "laneDensity": laneDensity,
         "trafficTrend": trend_data,

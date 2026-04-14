@@ -171,8 +171,17 @@ function applyAnalysisResult(result, videoPath) {
 
 router.get("/test-existing", async (req, res) => {
   try {
-    const videoPath =
-      "C:/Users/pande/OneDrive/Desktop/Smart Traffic Backend/backend/uploads/traffic.mp4";
+    let videoPath = path.join(__dirname, "../../uploads/traffic.mp4");
+    
+    if (!fs.existsSync(videoPath)) {
+      const uploadDirFiles = fs.readdirSync(uploadDir);
+      const mp4File = uploadDirFiles.find(f => f.endsWith('.mp4'));
+      if (mp4File) {
+        videoPath = path.join(uploadDir, mp4File);
+      } else {
+        return res.status(404).json({ success: false, message: "No .mp4 video found in uploads directory" });
+      }
+    }
 
     trafficStore.cameras[0].processingStatus = "processing";
     trafficStore.cameras[0].lastUpdated = new Date().toISOString();
