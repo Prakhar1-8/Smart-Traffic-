@@ -1,0 +1,511 @@
+{
+  "success": true,
+  "job_id": "a7ce5ed2-159a-402d-a3f8-20e6ba7d94f4",
+  "totalVehicles": 6,
+  "density": 20,
+  "vehicleTypes": {
+    "bus": 1,
+    "bike": 1,
+    "truck": 1,
+    "car": 3
+  },
+  "laneDensity": [
+    {
+      "lane": "Lane 1",
+      "density": 100
+    },
+    {
+      "lane": "Lane 2",
+      "density": 0
+    },
+    {
+      "lane": "Lane 3",
+      "density": 33
+    },
+    {
+      "lane": "Lane 4",
+      "density": 66
+    }
+  ],
+  "trafficTrend": [
+    {
+      "time": "F1",
+      "vehicles": 2
+    },
+    {
+      "time": "F2",
+      "vehicles": 4
+    },
+    {
+      "time": "F3",
+      "vehicles": 1
+    },
+    {
+      "time": "F4",
+      "vehicles": 2
+    },
+    {
+      "time": "F5",
+      "vehicles": 3
+    },
+    {
+      "time": "F6",
+      "vehicles": 3
+    },
+    {
+      "time": "F7",
+      "vehicles": 2
+    },
+    {
+      "time": "F8",
+      "vehicles": 3
+    },
+    {
+      "time": "F9",
+      "vehicles": 4
+    },
+    {
+      "time": "F10",
+      "vehicles": 2
+    }
+  ],
+  "recommendedSignalTime": 14,
+  "processedVideoPath": "/processed/processed_1776528318.mp4",
+  "meta": {
+    "frames": 293,
+    "max": 8
+  }
+},
+{
+  "success": true,
+  "job_id": "8d8dc2d9-7f71-41c3-9aa8-2cfc1963bc54",
+  "totalVehicles": 1,
+  "density": 40,
+  "vehicleTypes": {
+    "bike": 1
+  },
+  "laneDensity": [
+    {
+      "lane": "Lane 1",
+      "density": 0
+    },
+    {
+      "lane": "Lane 2",
+      "density": 0
+    },
+    {
+      "lane": "Lane 3",
+      "density": 0
+    },
+    {
+      "lane": "Lane 4",
+      "density": 100
+    }
+  ],
+  "trafficTrend": [
+    {
+      "time": "F1",
+      "vehicles": 3
+    },
+    {
+      "time": "F2",
+      "vehicles": 5
+    }
+  ],
+  "recommendedSignalTime": 17,
+  "processedVideoPath": "/processed/processed_1776540560.mp4",
+  "meta": {
+    "frames": 66,
+    "max": 9
+  }
+},
+{
+  "success": true,
+  "job_id": "e11a07bc-720c-4492-8e47-e35339fd8d37",
+  "totalVehicles": 1,
+  "density": 40,
+  "vehicleTypes": {
+    "bike": 1
+  },
+  "laneDensity": [
+    {
+      "lane": "Lane 1",
+      "density": 0
+    },
+    {
+      "lane": "Lane 2",
+      "density": 0
+    },
+    {
+      "lane": "Lane 3",
+      "density": 0
+    },
+    {
+      "lane": "Lane 4",
+      "density": 100
+    }
+  ],
+  "trafficTrend": [
+    {
+      "time": "F1",
+      "vehicles": 3
+    },
+    {
+      "time": "F2",
+      "vehicles": 5
+    }
+  ],
+  "recommendedSignalTime": 19,
+  "processedVideoPath": "/processed/processed_1776605198.mp4",
+  "meta": {
+    "frames": 66,
+    "max": 9
+  }
+},
+{
+  "success": true,
+  "job_id": "1687fd5f-06a1-4909-891d-84f59c575f02",
+  "totalVehicles": 1,
+  "density": 40,
+  "vehicleTypes": {
+    "car": 1
+  },
+  "laneDensity": [
+    {
+      "lane": "Lane 1",
+      "density": 0
+    },
+    {
+      "lane": "Lane 2",
+      "density": 0
+    },
+    {
+      "lane": "Lane 3",
+      "density": 100
+    },
+    {
+      "lane": "Lane 4",
+      "density": 0
+    }
+  ],
+  "trafficTrend": [
+    {
+      "time": "F1",
+      "vehicles": 5
+    },
+    {
+      "time": "F2",
+      "vehicles": 1
+    },
+    {
+      "time": "F3",
+      "vehicles": 4
+    },
+    {
+      "time": "F4",
+      "vehicles": 3
+    },
+    {
+      "time": "F5",
+      "vehicles": 8
+    }
+  ],
+  "recommendedSignalTime": 17,
+  "processedVideoPath": "/processed/processed_1776862244.mp4",
+  "meta": {
+    "frames": 132,
+    "max": 12
+  }
+},
+{
+  "success": true,
+  "job_id": "0ab05c6b-d170-48c2-b8af-17acd747a0b7",
+  "totalVehicles": 6,
+  "density": 20,
+  "vehicleTypes": {
+    "bus": 1,
+    "car": 4,
+    "truck": 1
+  },
+  "laneDensity": [
+    {
+      "lane": "Lane 1",
+      "density": 100
+    },
+    {
+      "lane": "Lane 2",
+      "density": 0
+    },
+    {
+      "lane": "Lane 3",
+      "density": 0
+    },
+    {
+      "lane": "Lane 4",
+      "density": 100
+    }
+  ],
+  "trafficTrend": [
+    {
+      "time": "F1",
+      "vehicles": 2
+    },
+    {
+      "time": "F2",
+      "vehicles": 4
+    },
+    {
+      "time": "F3",
+      "vehicles": 1
+    },
+    {
+      "time": "F4",
+      "vehicles": 2
+    },
+    {
+      "time": "F5",
+      "vehicles": 3
+    },
+    {
+      "time": "F6",
+      "vehicles": 3
+    },
+    {
+      "time": "F7",
+      "vehicles": 2
+    },
+    {
+      "time": "F8",
+      "vehicles": 3
+    },
+    {
+      "time": "F9",
+      "vehicles": 4
+    },
+    {
+      "time": "F10",
+      "vehicles": 2
+    }
+  ],
+  "recommendedSignalTime": 15,
+  "processedVideoPath": "/processed/processed_1776862896.mp4",
+  "meta": {
+    "frames": 293,
+    "max": 8
+  }
+},
+{
+  "success": true,
+  "job_id": "31999689-65d6-4f59-abf7-a356035bccea",
+  "totalVehicles": 14,
+  "density": 60,
+  "vehicleTypes": {
+    "car": 12,
+    "bus": 1,
+    "truck": 1
+  },
+  "laneDensity": [
+    {
+      "lane": "Lane 1",
+      "density": 0
+    },
+    {
+      "lane": "Lane 2",
+      "density": 100
+    },
+    {
+      "lane": "Lane 3",
+      "density": 83
+    },
+    {
+      "lane": "Lane 4",
+      "density": 50
+    }
+  ],
+  "trafficTrend": [
+    {
+      "time": "F1",
+      "vehicles": 10
+    },
+    {
+      "time": "F2",
+      "vehicles": 9
+    },
+    {
+      "time": "F3",
+      "vehicles": 10
+    },
+    {
+      "time": "F4",
+      "vehicles": 12
+    },
+    {
+      "time": "F5",
+      "vehicles": 9
+    },
+    {
+      "time": "F6",
+      "vehicles": 9
+    },
+    {
+      "time": "F7",
+      "vehicles": 6
+    },
+    {
+      "time": "F8",
+      "vehicles": 8
+    },
+    {
+      "time": "F9",
+      "vehicles": 6
+    },
+    {
+      "time": "F10",
+      "vehicles": 12
+    }
+  ],
+  "recommendedSignalTime": 28,
+  "processedVideoPath": "/processed/processed_1776864047.mp4",
+  "meta": {
+    "frames": 264,
+    "max": 18
+  }
+},
+{
+  "success": true,
+  "job_id": "980ec0cd-3c4c-41bd-96e0-d71077aa5a14",
+  "totalVehicles": 1,
+  "density": 40,
+  "vehicleTypes": {
+    "bike": 1
+  },
+  "laneDensity": [
+    {
+      "lane": "Lane 1",
+      "density": 0
+    },
+    {
+      "lane": "Lane 2",
+      "density": 0
+    },
+    {
+      "lane": "Lane 3",
+      "density": 0
+    },
+    {
+      "lane": "Lane 4",
+      "density": 100
+    }
+  ],
+  "trafficTrend": [
+    {
+      "time": "F1",
+      "vehicles": 3
+    },
+    {
+      "time": "F2",
+      "vehicles": 4
+    },
+    {
+      "time": "F3",
+      "vehicles": 2
+    },
+    {
+      "time": "F4",
+      "vehicles": 4
+    },
+    {
+      "time": "F5",
+      "vehicles": 5
+    }
+  ],
+  "recommendedSignalTime": 15,
+  "processedVideoPath": "/processed/processed_1776864200.mp4",
+  "meta": {
+    "frames": 132,
+    "max": 6
+  }
+},
+{
+  "job_id": "499e1497-2609-44dc-8f93-26253b66fd75",
+  "success": false,
+  "message": "Server crash: cannot schedule new futures after shutdown",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\pande\\OneDrive\\Desktop\\Smart Traffic Backend 2\\ai-service\\main.py\", line 383, in process_video_bg\n    executor.submit(send_live_update, payload_live)\n  File \"C:\\Users\\pande\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\concurrent\\futures\\thread.py\", line 167, in submit\n    raise RuntimeError('cannot schedule new futures after shutdown')\nRuntimeError: cannot schedule new futures after shutdown\n"
+},
+{
+  "success": true,
+  "job_id": "ec99c2ef-c326-404a-94f8-af1ad4f3de25",
+  "totalVehicles": 11,
+  "density": 40,
+  "vehicleTypes": {
+    "bike": 7,
+    "car": 2,
+    "truck": 2
+  },
+  "laneDensity": [
+    {
+      "lane": "Lane 1",
+      "density": 75
+    },
+    {
+      "lane": "Lane 2",
+      "density": 25
+    },
+    {
+      "lane": "Lane 3",
+      "density": 75
+    },
+    {
+      "lane": "Lane 4",
+      "density": 100
+    }
+  ],
+  "trafficTrend": [
+    {
+      "time": "F1",
+      "vehicles": 4
+    },
+    {
+      "time": "F2",
+      "vehicles": 4
+    },
+    {
+      "time": "F3",
+      "vehicles": 5
+    },
+    {
+      "time": "F4",
+      "vehicles": 3
+    },
+    {
+      "time": "F5",
+      "vehicles": 0
+    },
+    {
+      "time": "F6",
+      "vehicles": 1
+    },
+    {
+      "time": "F7",
+      "vehicles": 4
+    },
+    {
+      "time": "F8",
+      "vehicles": 1
+    },
+    {
+      "time": "F9",
+      "vehicles": 5
+    },
+    {
+      "time": "F10",
+      "vehicles": 1
+    }
+  ],
+  "recommendedSignalTime": 16,
+  "processedVideoPath": "/processed/processed_1776864759.mp4",
+  "meta": {
+    "frames": 293,
+    "max": 14
+  }
+},

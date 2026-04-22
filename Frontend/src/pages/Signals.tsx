@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { getSignals, updateSignalMode, updateSignalTiming, updateSignal } from "../lib/api";
 
-type Direction = "north" | "south" | "east" | "west";
+type Direction = "l1" | "l2" | "l3" | "l4";
 type LightColor = "red" | "yellow" | "green";
 type SignalMode = "auto" | "manual";
 
@@ -21,10 +21,10 @@ const initialSignalState: SignalState = {
   manualOverride: false,
   junctionId: 1,
   directions: {
-    north: "red",
-    south: "red",
-    east: "red",
-    west: "red",
+    l1: "red",
+    l2: "red",
+    l3: "red",
+    l4: "red",
   },
 };
 
@@ -209,9 +209,15 @@ export default function Signals() {
             min={10}
             max={120}
             value={manualTime}
-            onChange={(e) => setManualTime(Number(e.target.value))}
+            onChange={(e) => {
+              let val = Number(e.target.value);
+              // clamp the custom input visually but allow typing so they don't get blocked
+              // Actually clamping on change while typing e.g., '1' makes it '10', so we clamp only when they click "Apply", but the server already checks it!
+              // Let's just bind standard state.
+              setManualTime(val);
+            }}
             disabled={signalState.mode !== "manual" || actionLoading !== null}
-            className="w-full md:w-60 rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-white outline-none disabled:opacity-50"
+            className="w-full md:w-60 rounded-lg border border-border bg-background px-4 py-2 text-foreground outline-none disabled:opacity-50"
           />
 
           <button
@@ -232,10 +238,10 @@ export default function Signals() {
       <div className="space-y-4">
         <h2 className="text-xl font-semibold">Direction Control</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {renderSignal("north")}
-          {renderSignal("south")}
-          {renderSignal("east")}
-          {renderSignal("west")}
+          {renderSignal("l1")}
+          {renderSignal("l2")}
+          {renderSignal("l3")}
+          {renderSignal("l4")}
         </div>
       </div>
     </div>

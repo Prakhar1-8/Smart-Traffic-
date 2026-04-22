@@ -11,9 +11,12 @@ import Analytics from "@/pages/Analytics";
 import Signals from "@/pages/Signals";
 import Simulation from "@/pages/Simulation";
 import Alerts from "@/pages/Alerts";
+import Profile from "@/pages/Profile";
+import Signup from "@/pages/Signup";
 
 import SettingsPage from "@/pages/SettingsPage";
 import NotFound from "@/pages/NotFound";
+import Login from "@/pages/Login";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +27,8 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
           <Route element={<DashboardLayout />}>
             <Route path="/" element={<DashboardHome />} />
             <Route path="/upload-video" element={<VideoUpload />} />
@@ -33,6 +38,7 @@ const App = () => (
             <Route path="/simulation" element={<Simulation />} />
             <Route path="/alerts" element={<Alerts />} />
             <Route path="/settings" element={<SettingsPage />} />
+            <Route path="/profile" element={<Profile />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
