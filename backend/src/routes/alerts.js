@@ -14,8 +14,9 @@ router.get("/", async (req, res) => {
       data: rows,
     });
   } catch (err) {
-    console.error("Alerts Fetch Error:", err);
-    res.status(500).json({ success: false, message: "Database failure" });
+    console.warn("Alerts Fetch DB Error, using memory fallback:", err.message);
+    const memAlerts = global.alertsMemory || [];
+    res.json({ success: true, data: memAlerts });
   }
 });
 

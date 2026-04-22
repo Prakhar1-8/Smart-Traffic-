@@ -87,20 +87,38 @@ async function generateAlertsFromAnalysis(result, tenantId) {
   }
 
   laneDensity.forEach((lane) => {
-    if ((lane.density || 0) >= 85) {
+    if ((lane.density || 0) >= 100) {
+      newAlerts.push({
+        severity: "critical",
+        title: `100% ${lane.lane} Congestion`,
+        description: `${lane.lane} has reached 100% critical capacity. Immediate clearance required.`,
+        created_at: new Date().toISOString(),
+        is_read: false,
+        id: Date.now() + Math.floor(Math.random() * 1000)
+      });
+    } else if ((lane.density || 0) >= 85) {
       newAlerts.push({
         severity: "warning",
         title: `${lane.lane} Congestion`,
-        description: `${lane.lane} is showing unusually high congestion.`
+        description: `${lane.lane} is showing unusually high congestion.`,
+        created_at: new Date().toISOString(),
+        is_read: false,
+        id: Date.now() + Math.floor(Math.random() * 1000)
       });
     }
   });
 
-  for (const a of newAlerts) {
-    await pool.query(
-      "INSERT INTO alerts (tenant_id, severity, title, description) VALUES ($1, $2, $3, $4)",
-      [tenantId, a.severity, a.title, a.description]
-    );
+  try {
+    for (const a of newAlerts) {
+      await pool.query(
+        "INSERT INTO alerts (tenant_id, severity, title, description) VALUES ($1, $2, $3, $4)",
+        [tenantId, a.severity, a.title, a.description]
+      );
+    }
+  } catch (e) {
+    console.warn("DB offline: bypassing alert insertion, using in-memory mock.");
+    global.alertsMemory = global.alertsMemory || [];
+    global.alertsMemory.unshift(...newAlerts);
   }
 
   return newAlerts;
@@ -177,7 +195,7 @@ async function applyAnalysisResult(result, processedVideoPath) {
   try {
     newAlerts = await generateAlertsFromAnalysis(result, tenantId);
   } catch(e) {
-    console.warn("DB offline: bypassing alert generation.");
+    console.warn("Error generating alerts:", e);
   }
 
   if (ioInstance) {

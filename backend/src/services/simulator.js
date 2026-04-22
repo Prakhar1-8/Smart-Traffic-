@@ -23,7 +23,20 @@ const runSimulation = (io) => {
 
       io.emit("traffic:update", data);
 
-      if (data.density > 90) {
+      if (data.density >= 100) {
+        const simulatedAlert = {
+          severity: "critical",
+          title: "100% Simulated Lane Congestion",
+          description: "Simulated traffic density has reached 100% critical limit.",
+          created_at: new Date().toISOString(),
+          is_read: false,
+          id: Date.now() + Math.floor(Math.random() * 1000)
+        };
+        global.alertsMemory = global.alertsMemory || [];
+        global.alertsMemory.unshift(simulatedAlert);
+        
+        io.emit("alert:new", [simulatedAlert]);
+      } else if (data.density > 90) {
         io.emit("alert:new", {
           severity: "critical",
           message: "Traffic congestion critical"
