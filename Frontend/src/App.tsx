@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import DashboardLayout from "@/components/DashboardLayout";
 import DashboardHome from "@/pages/DashboardHome";
+import LandingPage from "@/pages/LandingPage";
 import VideoUpload from "@/pages/VideoUpload";
 import LiveFeed from "@/pages/LiveFeed";
 import Analytics from "@/pages/Analytics";
@@ -29,8 +30,9 @@ const App = () => (
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/" element={<LandingPage />} />
           <Route element={<DashboardLayout />}>
-            <Route path="/" element={<DashboardHome />} />
+            <Route path="/dashboard" element={<DashboardHome />} />
             <Route path="/upload-video" element={<VideoUpload />} />
             <Route path="/live-feed" element={<LiveFeed />} />
             <Route path="/analytics" element={<Analytics />} />

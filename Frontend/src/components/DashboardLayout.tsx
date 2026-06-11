@@ -18,7 +18,7 @@ import {
 import { getAlerts } from "../lib/api";
 
 const navItems = [
-  { title: "Dashboard", path: "/", icon: LayoutDashboard },
+  { title: "Dashboard", path: "/dashboard", icon: LayoutDashboard },
   { title: "Live Feed", path: "/live-feed", icon: Video },
   { title: "Analytics", path: "/analytics", icon: BarChart3 },
   { title: "Signals", path: "/signals", icon: TrafficCone },
@@ -29,7 +29,7 @@ const navItems = [
 ];
 
 const pageTitles: Record<string, string> = {
-  "/": "Dashboard Overview",
+  "/dashboard": "Dashboard Overview",
   "/live-feed": "Live CCTV Feed",
   "/analytics": "Traffic Analytics",
   "/signals": "Signal Control",
@@ -116,14 +116,14 @@ export default function DashboardLayout() {
   }, [role, navigate]);
 
   useEffect(() => {
-    if (role === "user" && currentPath !== "/" && currentPath !== "/analytics" && currentPath !== "/profile") {
-      navigate("/");
+    if (role === "user" && currentPath !== "/dashboard" && currentPath !== "/analytics" && currentPath !== "/profile") {
+      navigate("/dashboard");
     }
   }, [role, currentPath, navigate]);
 
   const filteredNavItems = useMemo(() => {
     if (role === "user") {
-      return navItems.filter(item => item.path === "/" || item.path === "/analytics");
+      return navItems.filter(item => item.path === "/dashboard" || item.path === "/analytics");
     }
     return navItems;
   }, [role]);
@@ -194,17 +194,17 @@ export default function DashboardLayout() {
       <div className="absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] rounded-full blob-violet blur-[120px] animate-blob mix-blend-screen opacity-60 -z-10" style={{ animationDelay: "5s" }}></div>
       <div className="absolute top-[40%] left-[60%] w-[30vw] h-[30vw] rounded-full blob-teal blur-[100px] animate-blob mix-blend-screen opacity-40 -z-10" style={{ animationDelay: "2s" }}></div>
 
-      <aside className="w-[280px] shrink-0 bg-background/40 backdrop-blur-3xl border-r border-white/5 flex flex-col z-10 relative">
-        <div className="absolute inset-y-0 right-0 w-[1px] bg-gradient-to-b from-transparent via-white/10 to-transparent"></div>
+      <aside className="w-[320px] shrink-0 bg-[#0c1324]/60 backdrop-blur-3xl border-r border-[#00e5ff]/20 shadow-[4px_0_24px_rgba(0,229,255,0.05)] flex flex-col z-10 relative">
+        <div className="absolute inset-y-0 right-0 w-[1px] bg-gradient-to-b from-transparent via-[#00e5ff]/30 to-transparent"></div>
         
-        <div className="h-20 flex items-center px-8">
-          <div className="w-10 h-10 rounded-xl bg-primary/20 border border-primary/30 flex items-center justify-center mr-4 glow-green">
-            <TrafficCone className="h-5 w-5 text-primary drop-shadow-[0_0_8px_rgba(0,240,255,0.8)]" />
+        <div className="h-24 flex items-center px-10 border-b border-[#00e5ff]/10">
+          <div className="w-12 h-12 rounded-xl bg-[#00e5ff]/20 border border-[#00e5ff]/40 flex items-center justify-center mr-4 shadow-[0_0_15px_rgba(0,229,255,0.4)]">
+            <TrafficCone className="h-6 w-6 text-[#00e5ff] drop-shadow-[0_0_10px_rgba(0,229,255,0.8)]" />
           </div>
-          <span className="text-foreground font-display font-bold text-2xl tracking-tighter">TrafficAI<span className="text-primary">.</span></span>
+          <span className="text-white font-['Space_Grotesk'] font-bold text-3xl tracking-tighter">TrafficAI<span className="text-[#00e5ff] drop-shadow-[0_0_10px_rgba(0,229,255,0.5)]">.</span></span>
         </div>
 
-        <nav className="flex-1 py-8 px-4 space-y-2">
+        <nav className="flex-1 py-8 px-6 space-y-3">
           {filteredNavItems.map((item) => {
             const active = currentPath === item.path;
 
@@ -212,17 +212,17 @@ export default function DashboardLayout() {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`group flex items-center gap-4 px-4 py-3.5 rounded-xl text-sm font-medium transition-all duration-300 relative overflow-hidden ${
+                className={`group flex items-center gap-4 px-5 py-4 rounded-xl transition-all duration-300 relative overflow-hidden ${
                   active
-                    ? "text-primary bg-primary/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]"
-                    : "text-muted-foreground hover:text-foreground hover:bg-white/5"
+                    ? "text-[#00e5ff] bg-[#00e5ff]/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.1),0_0_15px_rgba(0,229,255,0.1)] border border-[#00e5ff]/20"
+                    : "text-white/60 hover:text-white hover:bg-white/5 border border-transparent"
                 }`}
               >
                 {active && (
-                  <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-primary rounded-r-full glow-green animate-in-fade" />
+                  <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-10 bg-[#00e5ff] rounded-r-full shadow-[0_0_10px_rgba(0,229,255,0.8)] animate-in-fade" />
                 )}
-                <item.icon className={`h-5 w-5 transition-transform duration-300 ${active ? "drop-shadow-[0_0_8px_rgba(0,240,255,0.6)]" : "group-hover:scale-110"}`} />
-                <span className="tracking-wide relative z-10">{item.title}</span>
+                <item.icon className={`h-6 w-6 transition-transform duration-300 ${active ? "drop-shadow-[0_0_8px_rgba(0,229,255,0.6)]" : "group-hover:scale-110"}`} />
+                <span className="tracking-widest relative z-10 font-['Space_Grotesk'] font-medium text-sm uppercase">{item.title}</span>
               </Link>
             );
           })}
@@ -246,61 +246,63 @@ export default function DashboardLayout() {
           </div>
         )}
 
-        <header className="h-20 shrink-0 bg-background/20 backdrop-blur-md border-b border-white/5 flex items-center justify-between px-10 relative">
-          <div className="absolute inset-x-0 bottom-0 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+        <header className="h-24 shrink-0 bg-[#0c1324]/80 backdrop-blur-2xl border-b border-[#00e5ff]/20 shadow-[0_4px_30px_rgba(0,229,255,0.05)] flex items-center justify-between px-10 relative">
+          <div className="absolute inset-x-0 bottom-0 h-[1px] bg-gradient-to-r from-transparent via-[#00e5ff]/30 to-transparent"></div>
           
-          <h1 className="text-xl font-display font-semibold text-foreground tracking-tight animate-in-slide">
+          <h1 className="text-2xl font-['Space_Grotesk'] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#00e5ff] to-white/80 drop-shadow-[0_0_10px_rgba(0,229,255,0.3)] uppercase tracking-widest animate-in-slide">
             {pageTitles[currentPath] || "Dashboard"}
           </h1>
 
-          <div className="flex items-center gap-6">
-            <div className={`flex items-center gap-2 text-sm px-3 py-1.5 rounded-md border ${
+          <div className="flex items-center gap-8">
+            <div className={`flex items-center gap-3 text-sm px-4 py-2 rounded-lg border ${
               systemHealth === 'healthy' 
-                ? 'border-primary/20 bg-primary/5 text-primary' 
+                ? 'border-[#00e5ff]/30 bg-[#00e5ff]/10 text-[#00e5ff] shadow-[0_0_15px_rgba(0,229,255,0.2)]' 
                 : systemHealth === 'degraded' 
-                  ? 'border-orange-500/20 bg-orange-500/5 text-orange-500' 
-                  : 'border-destructive/20 bg-destructive/5 text-destructive animate-pulse'
+                  ? 'border-orange-500/30 bg-orange-500/10 text-orange-500 shadow-[0_0_15px_rgba(249,115,22,0.2)]' 
+                  : 'border-destructive/30 bg-destructive/10 text-destructive animate-pulse shadow-[0_0_15px_rgba(255,0,0,0.2)]'
             }`}>
-              <span className={`h-2 w-2 rounded-full ${
-                 systemHealth === 'healthy' ? 'bg-primary animate-pulse-glow' 
-                 : systemHealth === 'degraded' ? 'bg-orange-500' 
+              <span className={`h-2.5 w-2.5 rounded-full ${
+                 systemHealth === 'healthy' ? 'bg-[#00e5ff] shadow-[0_0_10px_rgba(0,229,255,0.8)] animate-pulse' 
+                 : systemHealth === 'degraded' ? 'bg-orange-500 shadow-[0_0_10px_rgba(249,115,22,0.8)]' 
                  : 'bg-destructive shadow-[0_0_10px_rgba(255,0,0,0.8)]'
               }`} />
-              <span className="font-bold uppercase tracking-widest text-[10px]">
+              <span className="font-['Space_Grotesk'] font-bold uppercase tracking-widest text-[11px]">
                  {systemHealth === 'healthy' ? `System Core (${role})` : systemHealth === 'degraded' ? 'Matrix Degraded' : 'DB ISOLATED'}
               </span>
             </div>
 
-            <div className="flex items-center gap-2 text-sm text-destructive border-r border-border pr-6">
-              <AlertTriangle className="h-4 w-4" />
-              <span>{unreadCount} Alerts</span>
+            <div className="flex items-center gap-3 text-sm text-destructive border-r border-[#00e5ff]/20 pr-8">
+              <AlertTriangle className="h-5 w-5 drop-shadow-[0_0_8px_rgba(255,0,0,0.6)]" />
+              <span className="font-['Space_Grotesk'] font-bold tracking-widest uppercase">{unreadCount} Alerts</span>
             </div>
 
             <Link
               to="/profile"
-              className="flex items-center justify-center p-2 rounded-lg text-muted-foreground hover:bg-background-tertiary hover:text-foreground transition-colors"
+              className="flex items-center justify-center p-3 rounded-xl bg-slate-900/50 border border-white/10 text-white/60 hover:text-[#00e5ff] hover:border-[#00e5ff]/40 hover:bg-[#00e5ff]/10 hover:shadow-[0_0_15px_rgba(0,229,255,0.2)] transition-all"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
             </Link>
 
             <button
               onClick={() => triggerJarvisAlarm("JARVIS audio system online. Critical simulation in progress.")}
-              className="flex items-center justify-center p-2 rounded-lg text-primary bg-primary/10 hover:bg-primary/20 transition-colors border border-primary/20 shadow-[0_0_10px_rgba(0,240,255,0.2)]"
+              className="flex items-center justify-center p-3 rounded-xl bg-[#00e5ff]/10 border border-[#00e5ff]/30 text-[#00e5ff] shadow-[0_0_15px_rgba(0,229,255,0.2)] hover:bg-[#00e5ff]/20 hover:shadow-[0_0_20px_rgba(0,229,255,0.4)] transition-all"
               title="Test Looping JARVIS Audio System"
             >
-              <Volume2 className="h-4 w-4" />
+              <Volume2 className="h-5 w-5" />
             </button>
 
             <button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="flex items-center justify-center p-2 rounded-lg text-muted-foreground hover:bg-background-tertiary transition-colors"
+              className="flex items-center justify-center p-3 rounded-xl bg-slate-900/50 border border-white/10 text-white/60 hover:text-[#00e5ff] hover:border-[#00e5ff]/40 hover:bg-[#00e5ff]/10 hover:shadow-[0_0_15px_rgba(0,229,255,0.2)] transition-all"
             >
-              {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-            </button>            <button
+              {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+            </button>
+
+            <button
               onClick={handleLogout}
-              className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className="flex items-center gap-3 text-sm font-['Space_Grotesk'] tracking-widest uppercase text-white/50 hover:text-[#00e5ff] transition-colors ml-4"
             >
-              <LogOut className="h-4 w-4" />
+              <LogOut className="h-5 w-5" />
               <span>Logout</span>
             </button>
           </div>

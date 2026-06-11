@@ -125,7 +125,7 @@ def process_video_bg(payload: dict, job_id: str):
 
     try:
         # Load model locally to reset tracker state for each job
-        model = YOLO("yolov8n.pt")
+        model = YOLO("yolov8s.pt")
         video_path = payload.get("videoPath")
 
         if not video_path or not os.path.exists(video_path):

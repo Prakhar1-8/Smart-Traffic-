@@ -1,5 +1,20 @@
 import { useEffect, useMemo, useState } from "react";
+import { motion } from "framer-motion";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15, delayChildren: 0.2 }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30, scale: 0.95 },
+  show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.8, ease: "easeOut" } }
+};
 import { getCameras, getCameraById, getDashboardStats } from "../lib/api";
+import EmptyState from "../components/EmptyState";
 
 type Camera = {
   id: number;
@@ -37,6 +52,8 @@ export default function LiveFeed() {
   const [videoPath, setVideoPath] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const [videoLoading, setVideoLoading] = useState(true);
+
+  const isDataAvailable = localStorage.getItem("isDataAvailable") === "true";
 
   const loadCameras = async () => {
     try {
@@ -77,6 +94,8 @@ export default function LiveFeed() {
   };
 
   useEffect(() => {
+    if (!isDataAvailable) return;
+
     const init = async () => {
       await Promise.all([loadCameras(), loadLatestVideo(true)]);
       setLoading(false);
@@ -142,17 +161,30 @@ export default function LiveFeed() {
     return finalUrl;
   }, [videoPath]);
 
+  if (!isDataAvailable) {
+    return <EmptyState />;
+  }
+
   if (loading) {
     return <div className="p-6 text-white">Loading live feeds...</div>;
   }
 
   return (
-    <div className="p-8 text-foreground space-y-8 max-w-[1600px] mx-auto animate-in-slide">
-      <h1 className="text-4xl font-display font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white to-white/60 mb-8">
-        Live Surveillance Feed
-      </h1>
+    <motion.div 
+      variants={containerVariants}
+      initial="hidden"
+      animate="show"
+      className="p-8 text-foreground space-y-8 max-w-[1600px] mx-auto relative overflow-hidden bg-[#0c1324] min-h-[calc(100vh-4rem)]"
+    >
+      <div className="absolute inset-0 grid-bg pointer-events-none [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_80%)] opacity-30"></div>
 
-      <div className="grid grid-cols-1 xl:grid-cols-4 gap-8">
+      <motion.div variants={itemVariants} className="relative z-10">
+        <h1 className="text-4xl font-['Space_Grotesk'] font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-[#00e5ff] to-white/60 mb-8 drop-shadow-[0_0_10px_rgba(0,229,255,0.4)] uppercase">
+          Live Surveillance Feed
+        </h1>
+      </motion.div>
+
+      <motion.div variants={itemVariants} className="grid grid-cols-1 xl:grid-cols-4 gap-8 relative z-10">
         {/* SIDE ARCHIVE / CAMERA SELECTOR */}
         <div className="glass-card p-6 space-y-4 xl:col-span-1 border-white/5 bg-background/40 max-h-[85vh] overflow-y-auto">
           <h2 className="text-sm font-semibold text-muted-foreground uppercase tracking-widest pl-2 mb-4">Network Nodes</h2>
@@ -273,7 +305,7 @@ export default function LiveFeed() {
             <div className="text-gray-400">No camera selected</div>
           )}
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }

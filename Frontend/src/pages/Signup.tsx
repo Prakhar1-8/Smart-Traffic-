@@ -60,7 +60,7 @@ export default function Signup() {
         localStorage.setItem("token", data.data.token);
         localStorage.setItem("role", data.data.role);
         toast.success(`Account minted natively! Authorized as ${data.data.role}`);
-        navigate("/");
+        navigate("/dashboard");
       } else {
         toast.error(data.message || "Registration validation tripped centrally");
       }

@@ -23,8 +23,9 @@ export default function Login() {
       if (data.success) {
         localStorage.setItem("token", data.data.token);
         localStorage.setItem("role", data.data.role);
+        localStorage.removeItem("isDataAvailable");
         toast.success(`Logged in as ${data.data.role}`);
-        navigate("/");
+        navigate("/dashboard");
       } else {
         toast.error(data.message || "Invalid credentials");
       }

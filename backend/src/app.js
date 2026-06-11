@@ -10,8 +10,15 @@ const { initDB } = require("./db");
 const { startTrafficEngine } = require("./services/trafficLightEngine");
 const app = express();
 const server = http.createServer(app);
+const allowedOrigins = process.env.ALLOWED_ORIGINS 
+  ? process.env.ALLOWED_ORIGINS.split(",") 
+  : ["http://localhost:8080", "http://localhost:5173", "http://localhost:5000"];
+
 const io = new Server(server, {
-  cors: { origin: "http://localhost:8080" }
+  cors: { 
+    origin: allowedOrigins,
+    methods: ["GET", "POST", "PUT"]
+  }
 });
 
 app.set("io", io);

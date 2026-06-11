@@ -1,6 +1,66 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { uploadVideo, processVideo, checkJobStatus } from "../lib/api";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15, delayChildren: 0.2 }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30, scale: 0.95 },
+  show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.8, ease: "easeOut" } }
+};
+
+const TiltCard = ({ children, className = "" }: { children: React.ReactNode, className?: string }) => {
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const mouseXSpring = useSpring(x, { stiffness: 300, damping: 30 });
+  const mouseYSpring = useSpring(y, { stiffness: 300, damping: 30 });
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["10deg", "-10deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-10deg", "10deg"]);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const width = rect.width;
+    const height = rect.height;
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+    const xPct = mouseX / width - 0.5;
+    const yPct = mouseY / height - 0.5;
+    x.set(xPct);
+    y.set(yPct);
+  };
+
+  const handleMouseLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
+
+  return (
+    <motion.div
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
+      className={`relative rounded-xl bg-slate-950/40 backdrop-blur-xl border border-[#00e5ff]/20 shadow-[0_0_15px_rgba(0,229,255,0.05)] overflow-hidden group ${className}`}
+    >
+      <div className="absolute inset-2 border border-[#00e5ff]/5 pointer-events-none z-10">
+        <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-[#00e5ff]/40"></div>
+        <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-[#00e5ff]/40"></div>
+        <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-[#00e5ff]/40"></div>
+        <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-[#00e5ff]/40"></div>
+      </div>
+      <div className="absolute top-0 left-0 w-full h-[200%] pointer-events-none bg-gradient-to-b from-transparent via-[#00e5ff]/5 to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-[scan_3s_linear_infinite] z-0"></div>
+      <div style={{ transform: "translateZ(30px)" }} className="relative z-20 h-full p-6 flex flex-col justify-between">
+         {children}
+      </div>
+    </motion.div>
+  );
+};
 
 type AlertItem = {
   id: number;
@@ -110,6 +170,7 @@ export default function UploadVideo() {
                   setSuccessMessage("AI Engine parsing finished flawlessly");
                   setResult(statusRes.data || null);
                   setGeneratedAlerts(statusRes.alerts || []);
+                  localStorage.setItem("isDataAvailable", "true");
                   setProcessing(false);
                } else if (statusRes.status === "failed") {
                   clearInterval(interval);
@@ -147,15 +208,24 @@ export default function UploadVideo() {
   };
 
   return (
-    <div className="p-6 text-white space-y-6">
-      <div>
-        <h1 className="text-2xl font-bold">Upload Traffic Video</h1>
-        <p className="text-sm text-white/60 mt-1">
+    <motion.div 
+      variants={containerVariants}
+      initial="hidden"
+      animate="show"
+      className="p-8 text-foreground space-y-8 max-w-[1600px] mx-auto relative overflow-hidden bg-[#0c1324] min-h-[calc(100vh-4rem)]"
+    >
+      <div className="absolute inset-0 grid-bg pointer-events-none [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_80%)] opacity-30"></div>
+
+      <motion.div variants={itemVariants} className="relative z-10">
+        <h1 className="text-4xl font-['Space_Grotesk'] font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-[#00e5ff] to-white/60 mb-2 drop-shadow-[0_0_10px_rgba(0,229,255,0.4)] uppercase">
+          Traffic Video Upload
+        </h1>
+        <p className="text-xs font-['Inter'] text-white/50 tracking-widest uppercase drop-shadow-sm">
           Perform a 2-step operation: First transmit your video, then manually trigger the AI Frame-Skip analysis engine.
         </p>
-      </div>
+      </motion.div>
 
-      <div className="rounded-xl border border-white/10 bg-black/30 p-6 space-y-5">
+      <motion.div variants={itemVariants} className="glass-card p-8 border-white/5 relative z-10 space-y-6">
         <div className="rounded-xl border border-dashed border-cyan-400/40 bg-cyan-500/5 p-6 text-center">
           <p className="text-lg font-semibold">Choose Traffic Video</p>
           <div className="mt-5">
@@ -235,10 +305,10 @@ export default function UploadVideo() {
             {error}
           </div>
         )}
-      </div>
+      </motion.div>
 
       {result && (
-        <>
+        <motion.div variants={itemVariants} className="space-y-6 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
             <div className="rounded-xl border border-emerald-500/30 bg-emerald-500/5 p-4 animate-in zoom-in transition-all">
               <p className="text-sm text-emerald-400">Total Vehicles Tracked</p>
@@ -305,11 +375,11 @@ export default function UploadVideo() {
                 })}
               </div>
             ) : (
-              <p className="text-white/50 text-center py-4">No structural alerts triggered during scan.</p>
+              <p className="text-white/50 text-center py-4 font-['Space_Grotesk'] tracking-widest text-xs uppercase">No structural alerts triggered during scan.</p>
             )}
           </div>
-        </>
+        </motion.div>
       )}
-    </div>
+    </motion.div>
   );
 }

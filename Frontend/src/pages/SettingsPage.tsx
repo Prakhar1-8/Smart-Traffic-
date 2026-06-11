@@ -1,6 +1,20 @@
 import { useState } from "react";
 import AnimatedCard from "@/components/AnimatedCard";
 import { Camera, Brain, Bell, Cog } from "lucide-react";
+import { motion } from "framer-motion";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15, delayChildren: 0.2 }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30, scale: 0.95 },
+  show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.8, ease: "easeOut" } }
+};
 
 function Toggle({ value, onChange, disabled = false }: { value: boolean; onChange: (v: boolean) => void; disabled?: boolean }) {
   return (
@@ -33,9 +47,24 @@ export default function SettingsPage() {
   const [notifs, setNotifs] = useState({ critical: true, warning: true, info: false, email: true });
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-      <AnimatedCard index={0}>
-        <div className="flex items-center gap-2 mb-4">
+    <motion.div 
+      variants={containerVariants}
+      initial="hidden"
+      animate="show"
+      className="p-8 text-foreground space-y-8 max-w-[1600px] mx-auto relative overflow-hidden bg-[#0c1324] min-h-[calc(100vh-4rem)]"
+    >
+      <div className="absolute inset-0 grid-bg pointer-events-none [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_80%)] opacity-30"></div>
+
+      <motion.div variants={itemVariants} className="relative z-10">
+        <h1 className="text-4xl font-['Space_Grotesk'] font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-[#00e5ff] to-white/60 mb-2 drop-shadow-[0_0_10px_rgba(0,229,255,0.4)] uppercase">
+          Global Settings
+        </h1>
+        <p className="text-xs font-['Inter'] text-white/50 tracking-widest uppercase drop-shadow-sm">Configure AI models, nodes, and system preferences.</p>
+      </motion.div>
+
+      <motion.div variants={itemVariants} className="grid grid-cols-1 lg:grid-cols-2 gap-6 relative z-10">
+        <div className="glass-card p-6 border-white/5">
+          <div className="flex items-center gap-2 mb-4">
           <Camera className="h-5 w-5 text-primary" />
           <h3 className="text-sm font-medium text-foreground">Camera Configuration</h3>
         </div>
@@ -60,10 +89,10 @@ export default function SettingsPage() {
             <Toggle value={nightVision} onChange={setNightVision} />
           </div>
         </div>
-      </AnimatedCard>
+        </div>
 
-      <AnimatedCard index={1}>
-        <div className="flex items-center gap-2 mb-4">
+        <div className="glass-card p-6 border-white/5">
+          <div className="flex items-center gap-2 mb-4">
           <Brain className="h-5 w-5 text-accent" />
           <h3 className="text-sm font-medium text-foreground">AI Model Settings</h3>
         </div>
@@ -91,10 +120,10 @@ export default function SettingsPage() {
             <Toggle value={autoLearn} onChange={setAutoLearn} />
           </div>
         </div>
-      </AnimatedCard>
+        </div>
 
-      <AnimatedCard index={2}>
-        <div className="flex items-center gap-2 mb-4">
+        <div className="glass-card p-6 border-white/5">
+          <div className="flex items-center gap-2 mb-4">
           <Bell className="h-5 w-5 text-warning" />
           <h3 className="text-sm font-medium text-foreground">Notification Preferences</h3>
         </div>
@@ -114,10 +143,10 @@ export default function SettingsPage() {
             </div>
           ))}
         </div>
-      </AnimatedCard>
+        </div>
 
-      <AnimatedCard index={3}>
-        <div className="flex items-center gap-2 mb-4">
+        <div className="glass-card p-6 border-white/5">
+          <div className="flex items-center gap-2 mb-4">
           <Cog className="h-5 w-5 text-destructive" />
           <h3 className="text-sm font-medium text-foreground">System Preferences</h3>
         </div>
@@ -138,7 +167,8 @@ export default function SettingsPage() {
             Save All Changes
           </button>
         </div>
-      </AnimatedCard>
-    </div>
+        </div>
+      </motion.div>
+    </motion.div>
   );
 }

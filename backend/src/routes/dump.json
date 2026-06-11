@@ -509,3 +509,1572 @@
     "max": 14
   }
 },
+{
+  "success": true,
+  "job_id": "d3e41b30-daa4-4c68-b35c-d0f3a8938ec6",
+  "totalVehicles": 11,
+  "density": 40,
+  "vehicleTypes": {
+    "bike": 7,
+    "car": 2,
+    "truck": 2
+  },
+  "laneDensity": [
+    {
+      "lane": "Lane 1",
+      "density": 75
+    },
+    {
+      "lane": "Lane 2",
+      "density": 25
+    },
+    {
+      "lane": "Lane 3",
+      "density": 75
+    },
+    {
+      "lane": "Lane 4",
+      "density": 100
+    }
+  ],
+  "trafficTrend": [
+    {
+      "time": "F1",
+      "vehicles": 4
+    },
+    {
+      "time": "F2",
+      "vehicles": 4
+    },
+    {
+      "time": "F3",
+      "vehicles": 5
+    },
+    {
+      "time": "F4",
+      "vehicles": 3
+    },
+    {
+      "time": "F5",
+      "vehicles": 0
+    },
+    {
+      "time": "F6",
+      "vehicles": 1
+    },
+    {
+      "time": "F7",
+      "vehicles": 4
+    },
+    {
+      "time": "F8",
+      "vehicles": 1
+    },
+    {
+      "time": "F9",
+      "vehicles": 5
+    },
+    {
+      "time": "F10",
+      "vehicles": 1
+    }
+  ],
+  "recommendedSignalTime": 16,
+  "processedVideoPath": "/processed/processed_1776866754.mp4",
+  "meta": {
+    "frames": 293,
+    "max": 14
+  }
+},
+{
+  "success": true,
+  "job_id": "f5b0b9ae-99e3-4102-948d-92a6c28b0c09",
+  "totalVehicles": 1,
+  "density": 20,
+  "vehicleTypes": {
+    "bike": 1
+  },
+  "laneDensity": [
+    {
+      "lane": "Lane 1",
+      "density": 0
+    },
+    {
+      "lane": "Lane 2",
+      "density": 0
+    },
+    {
+      "lane": "Lane 3",
+      "density": 0
+    },
+    {
+      "lane": "Lane 4",
+      "density": 100
+    }
+  ],
+  "trafficTrend": [
+    {
+      "time": "F1",
+      "vehicles": 2
+    },
+    {
+      "time": "F2",
+      "vehicles": 3
+    }
+  ],
+  "recommendedSignalTime": 13,
+  "processedVideoPath": "/processed/processed_1776870081.mp4",
+  "meta": {
+    "frames": 66,
+    "max": 5
+  }
+},
+{
+  "success": true,
+  "job_id": "f365f4e9-5e7f-4356-b899-7d13a654faaa",
+  "totalVehicles": 0,
+  "density": 20,
+  "vehicleTypes": {},
+  "laneDensity": [
+    {
+      "lane": "Lane 1",
+      "density": 0
+    },
+    {
+      "lane": "Lane 2",
+      "density": 0
+    },
+    {
+      "lane": "Lane 3",
+      "density": 0
+    },
+    {
+      "lane": "Lane 4",
+      "density": 0
+    }
+  ],
+  "trafficTrend": [
+    {
+      "time": "F1",
+      "vehicles": 1
+    }
+  ],
+  "recommendedSignalTime": 14,
+  "processedVideoPath": "/processed/processed_1776923643.mp4",
+  "meta": {
+    "frames": 33,
+    "max": 2
+  }
+},
+{
+  "success": true,
+  "job_id": "364c7e5f-041a-417d-b90e-4101797ba411",
+  "totalVehicles": 0,
+  "density": 20,
+  "vehicleTypes": {},
+  "laneDensity": [
+    {
+      "lane": "Lane 1",
+      "density": 0
+    },
+    {
+      "lane": "Lane 2",
+      "density": 0
+    },
+    {
+      "lane": "Lane 3",
+      "density": 0
+    },
+    {
+      "lane": "Lane 4",
+      "density": 0
+    }
+  ],
+  "trafficTrend": [
+    {
+      "time": "F1",
+      "vehicles": 1
+    }
+  ],
+  "recommendedSignalTime": 14,
+  "processedVideoPath": "/processed/processed_1776924266.mp4",
+  "meta": {
+    "frames": 33,
+    "max": 2
+  }
+},
+{
+  "success": true,
+  "job_id": "647d8d48-c688-49cf-babc-75f24fca4a94",
+  "totalVehicles": 0,
+  "density": 20,
+  "vehicleTypes": {},
+  "laneDensity": [
+    {
+      "lane": "Lane 1",
+      "density": 0
+    },
+    {
+      "lane": "Lane 2",
+      "density": 0
+    },
+    {
+      "lane": "Lane 3",
+      "density": 0
+    },
+    {
+      "lane": "Lane 4",
+      "density": 0
+    }
+  ],
+  "trafficTrend": [
+    {
+      "time": "F1",
+      "vehicles": 1
+    }
+  ],
+  "recommendedSignalTime": 14,
+  "processedVideoPath": "/processed/processed_1776924421.mp4",
+  "meta": {
+    "frames": 33,
+    "max": 2
+  }
+},
+{
+  "success": true,
+  "job_id": "aa5711e5-37f8-4bfb-a2c8-8c97c6e455a4",
+  "totalVehicles": 6,
+  "density": 60,
+  "vehicleTypes": {
+    "car": 6
+  },
+  "laneDensity": [
+    {
+      "lane": "Lane 1",
+      "density": 0
+    },
+    {
+      "lane": "Lane 2",
+      "density": 25
+    },
+    {
+      "lane": "Lane 3",
+      "density": 100
+    },
+    {
+      "lane": "Lane 4",
+      "density": 25
+    }
+  ],
+  "trafficTrend": [
+    {
+      "time": "F1",
+      "vehicles": 8
+    },
+    {
+      "time": "F2",
+      "vehicles": 6
+    },
+    {
+      "time": "F3",
+      "vehicles": 11
+    },
+    {
+      "time": "F4",
+      "vehicles": 6
+    },
+    {
+      "time": "F5",
+      "vehicles": 9
+    }
+  ],
+  "recommendedSignalTime": 25,
+  "processedVideoPath": "/processed/processed_1776924485.mp4",
+  "meta": {
+    "frames": 132,
+    "max": 18
+  }
+},
+{
+  "success": true,
+  "job_id": "53aecfd8-8732-4d38-8e3f-4e5014f3a7cc",
+  "totalVehicles": 6,
+  "density": 60,
+  "vehicleTypes": {
+    "car": 6
+  },
+  "laneDensity": [
+    {
+      "lane": "Lane 1",
+      "density": 0
+    },
+    {
+      "lane": "Lane 2",
+      "density": 25
+    },
+    {
+      "lane": "Lane 3",
+      "density": 100
+    },
+    {
+      "lane": "Lane 4",
+      "density": 25
+    }
+  ],
+  "trafficTrend": [
+    {
+      "time": "F1",
+      "vehicles": 8
+    },
+    {
+      "time": "F2",
+      "vehicles": 6
+    },
+    {
+      "time": "F3",
+      "vehicles": 11
+    },
+    {
+      "time": "F4",
+      "vehicles": 6
+    },
+    {
+      "time": "F5",
+      "vehicles": 9
+    }
+  ],
+  "recommendedSignalTime": 25,
+  "processedVideoPath": "/processed/processed_1776926865.mp4",
+  "meta": {
+    "frames": 132,
+    "max": 18
+  }
+},
+{
+  "success": true,
+  "job_id": "066e601e-84a1-4c85-819a-2b39386b0034",
+  "totalVehicles": 6,
+  "density": 60,
+  "vehicleTypes": {
+    "car": 6
+  },
+  "laneDensity": [
+    {
+      "lane": "Lane 1",
+      "density": 0
+    },
+    {
+      "lane": "Lane 2",
+      "density": 25
+    },
+    {
+      "lane": "Lane 3",
+      "density": 100
+    },
+    {
+      "lane": "Lane 4",
+      "density": 25
+    }
+  ],
+  "trafficTrend": [
+    {
+      "time": "F1",
+      "vehicles": 8
+    },
+    {
+      "time": "F2",
+      "vehicles": 6
+    },
+    {
+      "time": "F3",
+      "vehicles": 11
+    },
+    {
+      "time": "F4",
+      "vehicles": 6
+    },
+    {
+      "time": "F5",
+      "vehicles": 9
+    }
+  ],
+  "recommendedSignalTime": 25,
+  "processedVideoPath": "/processed/processed_1776935724.mp4",
+  "meta": {
+    "frames": 132,
+    "max": 18
+  }
+},
+{
+  "success": true,
+  "job_id": "66898c3b-29e6-43e6-9dc9-95e9142b1256",
+  "totalVehicles": 11,
+  "density": 40,
+  "vehicleTypes": {
+    "bike": 7,
+    "car": 2,
+    "truck": 2
+  },
+  "laneDensity": [
+    {
+      "lane": "Lane 1",
+      "density": 75
+    },
+    {
+      "lane": "Lane 2",
+      "density": 25
+    },
+    {
+      "lane": "Lane 3",
+      "density": 75
+    },
+    {
+      "lane": "Lane 4",
+      "density": 100
+    }
+  ],
+  "trafficTrend": [
+    {
+      "time": "F1",
+      "vehicles": 4
+    },
+    {
+      "time": "F2",
+      "vehicles": 4
+    },
+    {
+      "time": "F3",
+      "vehicles": 5
+    },
+    {
+      "time": "F4",
+      "vehicles": 3
+    },
+    {
+      "time": "F5",
+      "vehicles": 0
+    },
+    {
+      "time": "F6",
+      "vehicles": 1
+    },
+    {
+      "time": "F7",
+      "vehicles": 4
+    },
+    {
+      "time": "F8",
+      "vehicles": 1
+    },
+    {
+      "time": "F9",
+      "vehicles": 5
+    },
+    {
+      "time": "F10",
+      "vehicles": 1
+    }
+  ],
+  "recommendedSignalTime": 16,
+  "processedVideoPath": "/processed/processed_1776935858.mp4",
+  "meta": {
+    "frames": 293,
+    "max": 14
+  }
+},
+{
+  "success": true,
+  "job_id": "b9de68ee-91cb-4ad6-bba6-c78f1e9c4cc5",
+  "totalVehicles": 6,
+  "density": 60,
+  "vehicleTypes": {
+    "car": 6
+  },
+  "laneDensity": [
+    {
+      "lane": "Lane 1",
+      "density": 0
+    },
+    {
+      "lane": "Lane 2",
+      "density": 25
+    },
+    {
+      "lane": "Lane 3",
+      "density": 100
+    },
+    {
+      "lane": "Lane 4",
+      "density": 25
+    }
+  ],
+  "trafficTrend": [
+    {
+      "time": "F1",
+      "vehicles": 8
+    },
+    {
+      "time": "F2",
+      "vehicles": 6
+    },
+    {
+      "time": "F3",
+      "vehicles": 11
+    },
+    {
+      "time": "F4",
+      "vehicles": 6
+    },
+    {
+      "time": "F5",
+      "vehicles": 9
+    }
+  ],
+  "recommendedSignalTime": 25,
+  "processedVideoPath": "/processed/processed_1776935978.mp4",
+  "meta": {
+    "frames": 132,
+    "max": 18
+  }
+},
+{
+  "success": true,
+  "job_id": "a43ef11a-c359-4dfd-86da-23f76900fbd3",
+  "totalVehicles": 13,
+  "density": 80,
+  "vehicleTypes": {
+    "car": 11,
+    "bus": 2
+  },
+  "laneDensity": [
+    {
+      "lane": "Lane 1",
+      "density": 0
+    },
+    {
+      "lane": "Lane 2",
+      "density": 66
+    },
+    {
+      "lane": "Lane 3",
+      "density": 100
+    },
+    {
+      "lane": "Lane 4",
+      "density": 50
+    }
+  ],
+  "trafficTrend": [
+    {
+      "time": "F1",
+      "vehicles": 9
+    },
+    {
+      "time": "F2",
+      "vehicles": 14
+    },
+    {
+      "time": "F3",
+      "vehicles": 11
+    },
+    {
+      "time": "F4",
+      "vehicles": 18
+    },
+    {
+      "time": "F5",
+      "vehicles": 16
+    }
+  ],
+  "recommendedSignalTime": 40,
+  "processedVideoPath": "/processed/processed_1776936283.mp4",
+  "meta": {
+    "frames": 132,
+    "max": 20
+  }
+},
+{
+  "success": true,
+  "job_id": "28892111-08d9-4199-95e7-d2c169db06d2",
+  "totalVehicles": 13,
+  "density": 80,
+  "vehicleTypes": {
+    "car": 11,
+    "bus": 2
+  },
+  "laneDensity": [
+    {
+      "lane": "Lane 1",
+      "density": 0
+    },
+    {
+      "lane": "Lane 2",
+      "density": 66
+    },
+    {
+      "lane": "Lane 3",
+      "density": 100
+    },
+    {
+      "lane": "Lane 4",
+      "density": 50
+    }
+  ],
+  "trafficTrend": [
+    {
+      "time": "F1",
+      "vehicles": 9
+    },
+    {
+      "time": "F2",
+      "vehicles": 14
+    },
+    {
+      "time": "F3",
+      "vehicles": 11
+    },
+    {
+      "time": "F4",
+      "vehicles": 18
+    },
+    {
+      "time": "F5",
+      "vehicles": 16
+    }
+  ],
+  "recommendedSignalTime": 40,
+  "processedVideoPath": "/processed/processed_1776936693.mp4",
+  "meta": {
+    "frames": 132,
+    "max": 20
+  }
+},
+{
+  "success": true,
+  "job_id": "e48ec8ad-5c71-409c-b2ca-5719e235ce2f",
+  "totalVehicles": 13,
+  "density": 80,
+  "vehicleTypes": {
+    "car": 11,
+    "bus": 2
+  },
+  "laneDensity": [
+    {
+      "lane": "Lane 1",
+      "density": 0
+    },
+    {
+      "lane": "Lane 2",
+      "density": 66
+    },
+    {
+      "lane": "Lane 3",
+      "density": 100
+    },
+    {
+      "lane": "Lane 4",
+      "density": 50
+    }
+  ],
+  "trafficTrend": [
+    {
+      "time": "F1",
+      "vehicles": 9
+    },
+    {
+      "time": "F2",
+      "vehicles": 14
+    },
+    {
+      "time": "F3",
+      "vehicles": 11
+    },
+    {
+      "time": "F4",
+      "vehicles": 18
+    },
+    {
+      "time": "F5",
+      "vehicles": 16
+    }
+  ],
+  "recommendedSignalTime": 40,
+  "processedVideoPath": "/processed/processed_1776969013.mp4",
+  "meta": {
+    "frames": 132,
+    "max": 20
+  }
+},
+{
+  "success": true,
+  "job_id": "64b1a372-8988-407e-a747-40590d42650c",
+  "totalVehicles": 13,
+  "density": 80,
+  "vehicleTypes": {
+    "car": 11,
+    "bus": 2
+  },
+  "laneDensity": [
+    {
+      "lane": "Lane 1",
+      "density": 0
+    },
+    {
+      "lane": "Lane 2",
+      "density": 66
+    },
+    {
+      "lane": "Lane 3",
+      "density": 100
+    },
+    {
+      "lane": "Lane 4",
+      "density": 50
+    }
+  ],
+  "trafficTrend": [
+    {
+      "time": "F1",
+      "vehicles": 9
+    },
+    {
+      "time": "F2",
+      "vehicles": 14
+    },
+    {
+      "time": "F3",
+      "vehicles": 11
+    },
+    {
+      "time": "F4",
+      "vehicles": 18
+    },
+    {
+      "time": "F5",
+      "vehicles": 16
+    }
+  ],
+  "recommendedSignalTime": 40,
+  "processedVideoPath": "/processed/processed_1776975700.mp4",
+  "meta": {
+    "frames": 132,
+    "max": 20
+  }
+},
+{
+  "success": true,
+  "job_id": "2789b32c-2521-4986-9ddb-411dad5df2b4",
+  "totalVehicles": 13,
+  "density": 80,
+  "vehicleTypes": {
+    "car": 11,
+    "bus": 2
+  },
+  "laneDensity": [
+    {
+      "lane": "Lane 1",
+      "density": 0
+    },
+    {
+      "lane": "Lane 2",
+      "density": 66
+    },
+    {
+      "lane": "Lane 3",
+      "density": 100
+    },
+    {
+      "lane": "Lane 4",
+      "density": 50
+    }
+  ],
+  "trafficTrend": [
+    {
+      "time": "F1",
+      "vehicles": 9
+    },
+    {
+      "time": "F2",
+      "vehicles": 14
+    },
+    {
+      "time": "F3",
+      "vehicles": 11
+    },
+    {
+      "time": "F4",
+      "vehicles": 18
+    },
+    {
+      "time": "F5",
+      "vehicles": 16
+    }
+  ],
+  "recommendedSignalTime": 40,
+  "processedVideoPath": "/processed/processed_1776978154.mp4",
+  "meta": {
+    "frames": 132,
+    "max": 20
+  }
+},
+{},
+{},
+{
+  "success": true,
+  "job_id": "856f2f2a-04ac-41af-9a73-f372d798ca39",
+  "totalVehicles": 13,
+  "density": 80,
+  "vehicleTypes": {
+    "car": 11,
+    "bus": 2
+  },
+  "laneDensity": [
+    {
+      "lane": "Lane 1",
+      "density": 0
+    },
+    {
+      "lane": "Lane 2",
+      "density": 66
+    },
+    {
+      "lane": "Lane 3",
+      "density": 100
+    },
+    {
+      "lane": "Lane 4",
+      "density": 50
+    }
+  ],
+  "trafficTrend": [
+    {
+      "time": "F1",
+      "vehicles": 9
+    },
+    {
+      "time": "F2",
+      "vehicles": 14
+    },
+    {
+      "time": "F3",
+      "vehicles": 11
+    },
+    {
+      "time": "F4",
+      "vehicles": 18
+    },
+    {
+      "time": "F5",
+      "vehicles": 16
+    }
+  ],
+  "recommendedSignalTime": 40,
+  "processedVideoPath": "/processed/processed_1776987998.mp4",
+  "meta": {
+    "frames": 132,
+    "max": 20
+  }
+},
+{
+  "success": true,
+  "job_id": "30b384b4-c721-4105-87b9-9b5835707884",
+  "totalVehicles": 13,
+  "density": 80,
+  "vehicleTypes": {
+    "car": 11,
+    "bus": 2
+  },
+  "laneDensity": [
+    {
+      "lane": "Lane 1",
+      "density": 0
+    },
+    {
+      "lane": "Lane 2",
+      "density": 66
+    },
+    {
+      "lane": "Lane 3",
+      "density": 100
+    },
+    {
+      "lane": "Lane 4",
+      "density": 50
+    }
+  ],
+  "trafficTrend": [
+    {
+      "time": "F1",
+      "vehicles": 9
+    },
+    {
+      "time": "F2",
+      "vehicles": 14
+    },
+    {
+      "time": "F3",
+      "vehicles": 11
+    },
+    {
+      "time": "F4",
+      "vehicles": 18
+    },
+    {
+      "time": "F5",
+      "vehicles": 16
+    }
+  ],
+  "recommendedSignalTime": 40,
+  "processedVideoPath": "/processed/processed_1776988312.mp4",
+  "meta": {
+    "frames": 132,
+    "max": 20
+  }
+},
+{
+  "success": true,
+  "job_id": "fc6007e5-9a84-4c2c-ba03-dfff7cdc7143",
+  "totalVehicles": 0,
+  "density": 20,
+  "vehicleTypes": {},
+  "laneDensity": [
+    {
+      "lane": "Lane 1",
+      "density": 0
+    },
+    {
+      "lane": "Lane 2",
+      "density": 0
+    },
+    {
+      "lane": "Lane 3",
+      "density": 0
+    },
+    {
+      "lane": "Lane 4",
+      "density": 0
+    }
+  ],
+  "trafficTrend": [
+    {
+      "time": "F1",
+      "vehicles": 2
+    },
+    {
+      "time": "F2",
+      "vehicles": 2
+    },
+    {
+      "time": "F3",
+      "vehicles": 1
+    }
+  ],
+  "recommendedSignalTime": 12,
+  "processedVideoPath": "/processed/processed_1776988488.mp4",
+  "meta": {
+    "frames": 99,
+    "max": 3
+  }
+},
+{
+  "success": true,
+  "job_id": "c334dbed-490d-4a95-bc25-fd050f74b292",
+  "totalVehicles": 13,
+  "density": 80,
+  "vehicleTypes": {
+    "car": 11,
+    "bus": 2
+  },
+  "laneDensity": [
+    {
+      "lane": "Lane 1",
+      "density": 0
+    },
+    {
+      "lane": "Lane 2",
+      "density": 66
+    },
+    {
+      "lane": "Lane 3",
+      "density": 100
+    },
+    {
+      "lane": "Lane 4",
+      "density": 50
+    }
+  ],
+  "trafficTrend": [
+    {
+      "time": "F1",
+      "vehicles": 9
+    },
+    {
+      "time": "F2",
+      "vehicles": 14
+    },
+    {
+      "time": "F3",
+      "vehicles": 11
+    },
+    {
+      "time": "F4",
+      "vehicles": 18
+    },
+    {
+      "time": "F5",
+      "vehicles": 16
+    }
+  ],
+  "recommendedSignalTime": 40,
+  "processedVideoPath": "/processed/processed_1776988633.mp4",
+  "meta": {
+    "frames": 132,
+    "max": 20
+  }
+},
+{
+  "success": true,
+  "job_id": "9078e551-5405-4429-a78c-4968d8c5f234",
+  "totalVehicles": 2,
+  "density": 40,
+  "vehicleTypes": {
+    "car": 2
+  },
+  "laneDensity": [
+    {
+      "lane": "Lane 1",
+      "density": 0
+    },
+    {
+      "lane": "Lane 2",
+      "density": 0
+    },
+    {
+      "lane": "Lane 3",
+      "density": 100
+    },
+    {
+      "lane": "Lane 4",
+      "density": 0
+    }
+  ],
+  "trafficTrend": [
+    {
+      "time": "F1",
+      "vehicles": 4
+    },
+    {
+      "time": "F2",
+      "vehicles": 6
+    },
+    {
+      "time": "F3",
+      "vehicles": 5
+    }
+  ],
+  "recommendedSignalTime": 17,
+  "processedVideoPath": "/processed/processed_1776989077.mp4",
+  "meta": {
+    "frames": 84,
+    "max": 8
+  }
+},
+{
+  "success": true,
+  "job_id": "546d9072-28e6-4c21-8cb1-0a46dfc2d473",
+  "totalVehicles": 0,
+  "density": 20,
+  "vehicleTypes": {},
+  "laneDensity": [
+    {
+      "lane": "Lane 1",
+      "density": 0
+    },
+    {
+      "lane": "Lane 2",
+      "density": 0
+    },
+    {
+      "lane": "Lane 3",
+      "density": 0
+    },
+    {
+      "lane": "Lane 4",
+      "density": 0
+    }
+  ],
+  "trafficTrend": [
+    {
+      "time": "F1",
+      "vehicles": 1
+    },
+    {
+      "time": "F2",
+      "vehicles": 3
+    },
+    {
+      "time": "F3",
+      "vehicles": 0
+    },
+    {
+      "time": "F4",
+      "vehicles": 0
+    },
+    {
+      "time": "F5",
+      "vehicles": 0
+    }
+  ],
+  "recommendedSignalTime": 11,
+  "processedVideoPath": "/processed/processed_1776989526.mp4",
+  "meta": {
+    "frames": 130,
+    "max": 5
+  }
+},
+{
+  "success": true,
+  "job_id": "7a84a2d4-7be9-47de-a6c0-00a3a573aa25",
+  "totalVehicles": 79,
+  "density": 80,
+  "vehicleTypes": {
+    "car": 76,
+    "bus": 3
+  },
+  "laneDensity": [
+    {
+      "lane": "Lane 1",
+      "density": 0
+    },
+    {
+      "lane": "Lane 2",
+      "density": 100
+    },
+    {
+      "lane": "Lane 3",
+      "density": 97
+    },
+    {
+      "lane": "Lane 4",
+      "density": 16
+    }
+  ],
+  "trafficTrend": [
+    {
+      "time": "F1",
+      "vehicles": 11
+    },
+    {
+      "time": "F2",
+      "vehicles": 13
+    },
+    {
+      "time": "F3",
+      "vehicles": 10
+    },
+    {
+      "time": "F4",
+      "vehicles": 12
+    },
+    {
+      "time": "F5",
+      "vehicles": 10
+    },
+    {
+      "time": "F6",
+      "vehicles": 12
+    },
+    {
+      "time": "F7",
+      "vehicles": 10
+    },
+    {
+      "time": "F8",
+      "vehicles": 10
+    },
+    {
+      "time": "F9",
+      "vehicles": 12
+    },
+    {
+      "time": "F10",
+      "vehicles": 6
+    }
+  ],
+  "recommendedSignalTime": 26,
+  "processedVideoPath": "/processed/processed_1776989776.mp4",
+  "meta": {
+    "frames": 376,
+    "max": 19
+  }
+},
+{
+  "success": true,
+  "job_id": "b65043ab-5bd5-4c53-bbbf-ccc88449a07f",
+  "totalVehicles": 17,
+  "density": 80,
+  "vehicleTypes": {
+    "car": 17
+  },
+  "laneDensity": [
+    {
+      "lane": "Lane 1",
+      "density": 16
+    },
+    {
+      "lane": "Lane 2",
+      "density": 25
+    },
+    {
+      "lane": "Lane 3",
+      "density": 100
+    },
+    {
+      "lane": "Lane 4",
+      "density": 0
+    }
+  ],
+  "trafficTrend": [
+    {
+      "time": "F1",
+      "vehicles": 9
+    },
+    {
+      "time": "F2",
+      "vehicles": 14
+    }
+  ],
+  "recommendedSignalTime": 31,
+  "processedVideoPath": "/processed/processed_1776990371.mp4",
+  "meta": {
+    "frames": 59,
+    "max": 19
+  }
+},
+{
+  "success": true,
+  "job_id": "a274c9cb-36ae-4990-8d55-794c9b40448b",
+  "totalVehicles": 79,
+  "density": 80,
+  "vehicleTypes": {
+    "car": 76,
+    "bus": 3
+  },
+  "laneDensity": [
+    {
+      "lane": "Lane 1",
+      "density": 0
+    },
+    {
+      "lane": "Lane 2",
+      "density": 100
+    },
+    {
+      "lane": "Lane 3",
+      "density": 97
+    },
+    {
+      "lane": "Lane 4",
+      "density": 16
+    }
+  ],
+  "trafficTrend": [
+    {
+      "time": "F1",
+      "vehicles": 11
+    },
+    {
+      "time": "F2",
+      "vehicles": 13
+    },
+    {
+      "time": "F3",
+      "vehicles": 10
+    },
+    {
+      "time": "F4",
+      "vehicles": 12
+    },
+    {
+      "time": "F5",
+      "vehicles": 10
+    },
+    {
+      "time": "F6",
+      "vehicles": 12
+    },
+    {
+      "time": "F7",
+      "vehicles": 10
+    },
+    {
+      "time": "F8",
+      "vehicles": 10
+    },
+    {
+      "time": "F9",
+      "vehicles": 12
+    },
+    {
+      "time": "F10",
+      "vehicles": 6
+    }
+  ],
+  "recommendedSignalTime": 26,
+  "processedVideoPath": "/processed/processed_1776990920.mp4",
+  "meta": {
+    "frames": 376,
+    "max": 19
+  }
+},
+{
+  "success": true,
+  "job_id": "65f9b637-deed-4a4d-b27d-0311e21c2493",
+  "totalVehicles": 79,
+  "density": 80,
+  "vehicleTypes": {
+    "car": 76,
+    "bus": 3
+  },
+  "laneDensity": [
+    {
+      "lane": "Lane 1",
+      "density": 0
+    },
+    {
+      "lane": "Lane 2",
+      "density": 100
+    },
+    {
+      "lane": "Lane 3",
+      "density": 97
+    },
+    {
+      "lane": "Lane 4",
+      "density": 16
+    }
+  ],
+  "trafficTrend": [
+    {
+      "time": "F1",
+      "vehicles": 11
+    },
+    {
+      "time": "F2",
+      "vehicles": 13
+    },
+    {
+      "time": "F3",
+      "vehicles": 10
+    },
+    {
+      "time": "F4",
+      "vehicles": 12
+    },
+    {
+      "time": "F5",
+      "vehicles": 10
+    },
+    {
+      "time": "F6",
+      "vehicles": 12
+    },
+    {
+      "time": "F7",
+      "vehicles": 10
+    },
+    {
+      "time": "F8",
+      "vehicles": 10
+    },
+    {
+      "time": "F9",
+      "vehicles": 12
+    },
+    {
+      "time": "F10",
+      "vehicles": 6
+    }
+  ],
+  "recommendedSignalTime": 26,
+  "processedVideoPath": "/processed/processed_1776991219.mp4",
+  "meta": {
+    "frames": 376,
+    "max": 19
+  }
+},
+{
+  "success": true,
+  "job_id": "ce5e0a9b-dce3-4a20-a1de-a664c20ef606",
+  "totalVehicles": 13,
+  "density": 80,
+  "vehicleTypes": {
+    "car": 11,
+    "bus": 2
+  },
+  "laneDensity": [
+    {
+      "lane": "Lane 1",
+      "density": 0
+    },
+    {
+      "lane": "Lane 2",
+      "density": 66
+    },
+    {
+      "lane": "Lane 3",
+      "density": 100
+    },
+    {
+      "lane": "Lane 4",
+      "density": 50
+    }
+  ],
+  "trafficTrend": [
+    {
+      "time": "F1",
+      "vehicles": 9
+    },
+    {
+      "time": "F2",
+      "vehicles": 14
+    },
+    {
+      "time": "F3",
+      "vehicles": 11
+    },
+    {
+      "time": "F4",
+      "vehicles": 18
+    },
+    {
+      "time": "F5",
+      "vehicles": 16
+    }
+  ],
+  "recommendedSignalTime": 40,
+  "processedVideoPath": "/processed/processed_1776991338.mp4",
+  "meta": {
+    "frames": 132,
+    "max": 20
+  }
+},
+{
+  "success": true,
+  "job_id": "25c57711-fc32-446b-8c63-5100ddb19740",
+  "totalVehicles": 17,
+  "density": 80,
+  "vehicleTypes": {
+    "car": 17
+  },
+  "laneDensity": [
+    {
+      "lane": "Lane 1",
+      "density": 16
+    },
+    {
+      "lane": "Lane 2",
+      "density": 25
+    },
+    {
+      "lane": "Lane 3",
+      "density": 100
+    },
+    {
+      "lane": "Lane 4",
+      "density": 0
+    }
+  ],
+  "trafficTrend": [
+    {
+      "time": "F1",
+      "vehicles": 9
+    },
+    {
+      "time": "F2",
+      "vehicles": 14
+    }
+  ],
+  "recommendedSignalTime": 31,
+  "processedVideoPath": "/processed/processed_1776992758.mp4",
+  "meta": {
+    "frames": 59,
+    "max": 19
+  }
+},
+{
+  "success": true,
+  "job_id": "fe1c6217-11d9-4fb4-ac7a-f1fe233384cc",
+  "totalVehicles": 79,
+  "density": 80,
+  "vehicleTypes": {
+    "car": 76,
+    "bus": 3
+  },
+  "laneDensity": [
+    {
+      "lane": "Lane 1",
+      "density": 0
+    },
+    {
+      "lane": "Lane 2",
+      "density": 100
+    },
+    {
+      "lane": "Lane 3",
+      "density": 97
+    },
+    {
+      "lane": "Lane 4",
+      "density": 16
+    }
+  ],
+  "trafficTrend": [
+    {
+      "time": "F1",
+      "vehicles": 11
+    },
+    {
+      "time": "F2",
+      "vehicles": 13
+    },
+    {
+      "time": "F3",
+      "vehicles": 10
+    },
+    {
+      "time": "F4",
+      "vehicles": 12
+    },
+    {
+      "time": "F5",
+      "vehicles": 10
+    },
+    {
+      "time": "F6",
+      "vehicles": 12
+    },
+    {
+      "time": "F7",
+      "vehicles": 10
+    },
+    {
+      "time": "F8",
+      "vehicles": 10
+    },
+    {
+      "time": "F9",
+      "vehicles": 12
+    },
+    {
+      "time": "F10",
+      "vehicles": 6
+    }
+  ],
+  "recommendedSignalTime": 26,
+  "processedVideoPath": "/processed/processed_1781177466.mp4",
+  "meta": {
+    "frames": 376,
+    "max": 19
+  }
+},

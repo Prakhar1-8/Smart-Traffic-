@@ -1,4 +1,19 @@
 import { useEffect, useMemo, useState, useRef } from "react";
+import { motion } from "framer-motion";
+import EmptyState from "../components/EmptyState";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15, delayChildren: 0.2 }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30, scale: 0.95 },
+  show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.8, ease: "easeOut" } }
+};
 import {
   getDashboardStats,
   getInsights,
@@ -53,6 +68,7 @@ type GenericListResponse<T> = {
 };
 
 export default function Simulation() {
+  const isDataAvailable = localStorage.getItem("isDataAvailable") === "true";
   const [dashboard, setDashboard] = useState<DashboardData | null>(null);
   const [laneDensity, setLaneDensity] = useState<LaneDensityItem[]>([]);
   const [trafficTrend, setTrafficTrend] = useState<TrendItem[]>([]);
@@ -124,6 +140,7 @@ export default function Simulation() {
   };
 
   useEffect(() => {
+    if (!isDataAvailable) return;
     loadSimulationData();
 
     const interval = setInterval(() => {
@@ -235,6 +252,10 @@ export default function Simulation() {
     return signalState?.directions || defaultSignals;
   }, [laneDensity, signalState]);
 
+  if (!isDataAvailable) {
+    return <EmptyState />;
+  }
+
   if (loading) {
     return <div className="p-6 text-foreground">Loading simulation...</div>;
   }
@@ -249,17 +270,24 @@ export default function Simulation() {
 
   return (
     <ErrorBoundary>
-      <div className="p-8 text-foreground space-y-8 max-w-[1600px] mx-auto animate-in-slide">
-        <div>
-        <h1 className="text-4xl font-display font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white to-white/60 mb-2">
-          Global Optimization Engine
-        </h1>
-        <p className="text-muted-foreground font-medium tracking-wide">
-          Mathematical AI models forecasting localized matrix constraints.
-        </p>
-      </div>
+      <motion.div 
+        variants={containerVariants}
+        initial="hidden"
+        animate="show"
+        className="p-8 text-foreground space-y-8 max-w-[1600px] mx-auto relative overflow-hidden bg-[#0c1324] min-h-[calc(100vh-4rem)]"
+      >
+        <div className="absolute inset-0 grid-bg pointer-events-none [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_80%)] opacity-30"></div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+        <motion.div variants={itemVariants} className="relative z-10">
+          <h1 className="text-4xl font-['Space_Grotesk'] font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-[#00e5ff] to-white/60 mb-2 drop-shadow-[0_0_10px_rgba(0,229,255,0.4)] uppercase">
+            Global Optimization Engine
+          </h1>
+          <p className="text-xs font-['Inter'] text-white/50 tracking-widest uppercase drop-shadow-sm">
+            Mathematical AI models forecasting localized matrix constraints.
+          </p>
+        </motion.div>
+
+        <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 relative z-10">
         <div className="glass-card p-6 border-white/5 relative overflow-hidden group">
           <div className="absolute top-0 right-0 w-24 h-24 bg-primary/10 rounded-full blur-2xl -mr-12 -mt-12 transition-all duration-500 group-hover:bg-primary/20"></div>
           <p className="text-xs font-semibold text-muted-foreground uppercase tracking-widest relative z-10">Current Saturation</p>
@@ -287,9 +315,9 @@ export default function Simulation() {
             {busiestLane ? busiestLane.lane : "N/A"}
           </h2>
         </div>
-      </div>
+      </motion.div>
 
-      <div className="glass-card p-8 space-y-8 border-white/5 relative overflow-hidden">
+      <motion.div variants={itemVariants} className="glass-card p-8 space-y-8 border-white/5 relative overflow-hidden z-10">
         <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-primary/5 via-transparent to-accent/5"></div>
         <div className="flex items-center justify-between relative z-10">
           <div>
@@ -335,9 +363,9 @@ export default function Simulation() {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
-      <div className="glass-card p-8 border-white/5 relative overflow-hidden group">
+      <motion.div variants={itemVariants} className="glass-card p-8 border-white/5 relative overflow-hidden group z-10">
         <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:30px_30px] pointer-events-none"></div>
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-destructive/5 rounded-full blur-[100px] -mr-40 -mt-40 transition-opacity duration-1000 pointer-events-none opacity-0 group-hover:opacity-100"></div>
         
@@ -495,9 +523,9 @@ export default function Simulation() {
              </svg>
           </div>
         </div>
-      </div>
+      </motion.div>
 
-      <div className="glass-card p-8 border-white/5">
+      <motion.div variants={itemVariants} className="glass-card p-8 border-white/5 relative z-10">
         <h2 className="text-xl font-display font-bold mb-6 text-white/90">Vector Density Mapping</h2>
 
         <div className="space-y-6">
@@ -521,9 +549,9 @@ export default function Simulation() {
             </div>
           ))}
         </div>
-      </div>
+      </motion.div>
 
-      <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
+      <motion.div variants={itemVariants} className="grid grid-cols-1 xl:grid-cols-2 gap-8 relative z-10">
         <div className="glass-card p-8 border-white/5">
           <h2 className="text-xl font-display font-bold mb-6 text-white/90">Execution Summary</h2>
 
@@ -571,14 +599,14 @@ export default function Simulation() {
             )}
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Render the interactive Lane Mapper vector tool */}
-      <div className="mt-8">
+      <motion.div variants={itemVariants} className="mt-8 relative z-10">
          <LaneMapper cameraId={1} cameraUrl="rtsp://junction-alpha/primary-feed" />
-      </div>
+      </motion.div>
 
-    </div>
+    </motion.div>
     </ErrorBoundary>
   );
 }
